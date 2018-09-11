@@ -1,0 +1,37 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8759/eureka/,http://peer2:8760/eureka/,http://peer3:8761/eureka/
+server:
+  port: 8765
+spring:
+  application:
+    name: service-feign
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+ribbon:
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: false
+  ConnectTimeout: 250
+  ReadTimeout: 1000
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
