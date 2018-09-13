@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    prefer-ip-address: true
+    hostname: peer1
   client:
     registerWithEureka: false
     fetchRegistry: false
