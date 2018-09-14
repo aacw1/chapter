@@ -9,4 +9,4 @@ eureka:
     fetchRegistry: false
 spring:
   application:
-    name: eurka-server
+    name: eureka-server
