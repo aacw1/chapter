@@ -1,7 +1,9 @@
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://192.168.3.210:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/
 server:
   port: 8764
 spring:
